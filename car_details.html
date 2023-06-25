@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html dir="rtl">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css" type="text/css" />
+        <title>car-details</title>
+    </head>
+    <body onload="createCaptcha()">
+        
+    <h2>Car Details</h2>
+    <table>
+      <tr>
+        <td>Rental Type:</td>
+        <td id="rental-type"></td>
+      </tr>
+      <tr>
+        <td>Rental Value:</td>
+        <td id="rental-value"></td>
+      </tr>
+      <tr>
+        <td>Reconstruction Fee (1%):</td>
+        <td id="reconstruction-fee"></td>
+      </tr>
+      <tr>
+        <td>Tax (5%):</td>
+        <td id="tax"></td>
+      </tr>
+      <tr>
+        <td>Total Rental Value:</td>
+        <td id="total-rental-value"></td>
+      </tr>
+    </table>
+    <img id="car-image" src="">
+    <br>
+    <button onclick="location.href='index.html'" class="button">Close</button>
+    <br>
+    
+    <label for="myButton">متابعة</label>
+    <input type = "checkbox" id="myButton" class="myBtn" name = "next" value = "check"> 
+   <hr>
+   
+
+    <form id="myForm" style="display:none;"  onsubmit="return ChechFormValues(this)" >
+      <h2>Request Form</h2>
+      <label for="full-name">Full Name:</label>
+      <input type="text" placeholder="full_name " name="name" required />
+      <br>
+      <label for="national-id">National ID:</label>
+      <input type="text" name="id" required/>
+      <br>
+      <label for="date-of-birth">Date of Birth:</label>
+      <input type="date" name="birth" required/>
+      <br>
+      <label for="mobile-number">Mobile Number:</label>
+      <input type="text" name="phone" placeholder="09xxxxxxxx" required/>
+      <br>
+      <label for="email">Email:</label>
+      <input type="text" name="mail" placeholder="example@mail.com" required/>
+
+      <br>
+      <label for="rental-period">Rental Period:</label>
+      <input type="number" id="rental-period" min="1"name="num1" required>
+      <select id="rental-type-options">
+        <option value="daily">Daily</option>
+        <option value="weekly">Weekly</option>
+        <option value="monthly">Monthly</option>
+      </select>
+      <br>
+
+      
+      <label for="captcha">
+      <svg width="120" height="50">
+        <filter id="BlurFilter">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="1" />
+        </filter>
+        <rect width="120" height="50" fill="#afcfe2" />
+        <text id="captcha" filter="url(#BlurFilter)" fill="#174e6e" stroke="black" font-size="30" font-family="Ink Free" x="100" y="35" ></text>
+    </svg>
+
+    <input id="cpatchaTextBox" type="text" placeholder="ادخل رمز التحقق" size="14" autocomplete="off" required/>
+    <input type="button" id="recaptchBtn" value="تغيير الرمز" onclick="createCaptcha()" />
+
+  </label>
+
+
+      <br>
+      <button type="submit"  >Submit Request</button>
+    </form>
+  </div>
+  <script src="MyFunction.js"></script>
+</body>
+</html>
